@@ -14,12 +14,15 @@ let watchlist = {
             let movieElement = document.createElement("li");
             movieElement.className = "collection-item";
 
-            movieElement.innerHTML = `Movie: ${movie.name} Genre: ${movie.genre}<button onclick=watchlist.removeMovie(${index}) id="remove-movie-btn" class="remove-btn" type="button">
+            movieElement.innerHTML = `Movie: ${movie.name}
+            <button onclick=watchlist.removeMovie(${index}) id="remove-movie-btn" class="remove-btn" type="button">
             Mark As Watched</button>`;
             moviesList.appendChild(movieElement);
         });
     },
 
+
+    //Method to remove a movie from the watchlist
     removeMovie(index) {
         this.movies.splice(index, 1);
         this.displayMovies();
